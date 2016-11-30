@@ -1,2 +1,0 @@
-# server.forads
-server.forads
