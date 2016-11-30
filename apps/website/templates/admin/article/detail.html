@@ -1,0 +1,18 @@
+{% extends 'admin/article/base.html' %}
+
+{% block title %}admin article detail{% endblock %}
+
+{% block main %}
+<div id="article_detail">
+    <input id="article_id" value="{{ article_id }}" hidden/>
+    title: <h1 id="title"></h1><br/>
+    content: <p id="content"></p><br/>
+    author: <span id="author"></span><br/>
+    category: <span id="category"></span><br/>
+    tags: <span id="tags"></span><br/>
+    create time: <span id="create_time"></span><br/>
+    update time: <span id="update_time"></span><br/>
+</div>
+<button id="article_edit_btn">edit</button><br/>
+<button id="article_remove_btn">remove</button><br/>
+{% endblock %}

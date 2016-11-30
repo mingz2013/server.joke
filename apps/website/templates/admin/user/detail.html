@@ -1,0 +1,17 @@
+{% extends 'admin/user/base.html' %}
+
+{% block title %}admin user detail{% endblock %}
+
+{% block main %}
+<div id="user_detail">
+    <input id="user_id" value="{{ user_id }}" hidden/>
+    username: <span id="username"></span><br/>
+    email: <span id="email"></span><br/>
+    mobile: <span id="mobile"></span><br/>
+    sex: <span id="sex"></span><br/>
+    permission: <span id="permission"></span><br/>
+    create time: <span id="create_time"></span><br/>
+</div>
+<button id="user_edit_btn">edit</button><br/>
+<button id="user_remove_btn">remove</button><br/>
+{% endblock %}

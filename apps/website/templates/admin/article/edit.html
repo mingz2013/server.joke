@@ -1,0 +1,54 @@
+{% extends 'admin/article/base.html' %}
+
+{% block title %}admin article update{% endblock %}
+
+{% block main %}
+<div id="article_edit">
+    <input id="article_id" value="{{ article_id }}" hidden/>
+    title: <input id="title"/><br/>
+
+    content: <textarea id="content"></textarea><br/>
+    <!--author: <input id="author"/><br/>-->
+    author: <select id="user_id"></select><br/>
+
+    category:
+    <div id="category">
+        <!--<input type="radio" name="category" value="学生" checked="checked" />学生 -->
+        <!--<input type="radio" name="category" value="教师" />教师 -->
+        <!--<input type="radio" name="category" value="管理员" />管理员-->
+
+    </div>
+    <div>
+        <div>
+            <button id="category_add_switch">add</button>
+        </div>
+        <div id="category_add_box" hidden>
+            <input id="category_add"/>
+            <button id="category_add_btn">add</button>
+        </div>
+    </div>
+
+
+    tags:
+    <div id="tag_box"></div>
+    <div>
+        <div>
+            <button id="tag_add_switch">add</button>
+        </div>
+        <div id="tag_add_box" hidden>
+            <input id="tag_add"/>
+            <button id="tag_add_btn">add</button>
+        </div>
+    </div>
+
+
+    status: <select id="status">
+    <option value="0">草稿</option>
+    <option value="1">发布</option>
+</select><br/>
+
+    <button id="article_edit_btn">update article</button>
+</div>
+
+
+{% endblock %}

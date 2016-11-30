@@ -1,0 +1,19 @@
+{% extends 'admin/user/base.html' %}
+
+{% block title %}admin user add{% endblock %}
+
+{% block main %}
+<div id="user_add">
+    username: <input id="username"/><br/>
+    password: <input id="password"/><br/>
+    password2: <input id="password2"/><br/>
+    email: <input id="email"/><br/>
+    mobile: <input id="mobile"/><br/>
+    sex: <input id="sex"/><br/>
+    permission: <select id="permission">
+    <option value="admin">admin</option>
+    <option value="author">author</option>
+</select><br/>
+    <button id="user_add_btn">add user</button>
+</div>
+{% endblock %}

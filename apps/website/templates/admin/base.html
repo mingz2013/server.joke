@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+<script type="text/javascript" src="{{ url_for('static', filename = 'admin/dist/bundle.js') }}"></script>
+{% endblock %}
+
+{% block title %}admin base{% endblock %}
+
+{% block body %}
+
+{% block menubar %}
+<ul>
+    <li><a href="{{ url_for('admin_controller.index') }}">Admin</a></li>
+    <!--<li><a href="{{ url_for('admin_controller.user_list') }}">Users</a></li>-->
+    <li><a href="{{ url_for('admin_controller.article_list') }}">Articles</a></li>
+</ul>
+{% endblock %}
+
+{% block sidebar %}
+admin base sidebar
+{% endblock %}
+
+{% block main %}
+admin base main
+{% endblock %}
+
+{% endblock %}

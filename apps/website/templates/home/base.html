@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head_script %}
+<link href="{{ url_for('static', filename = 'app/node_modules/bootstrap/dist/css/bootstrap.min.css') }}"
+      rel="stylesheet">
+<script type="text/javascript" src="{{ url_for('static', filename = 'app/dist/bundle.js') }}"></script>
+{% endblock %}
+
+{% block title %}home{% endblock %}
+
+{% block body %}
+{% block menubar %}
+<div class="blog-masthead">
+    <div class="container">
+        <nav class="blog-nav">
+
+            <a class="blog-nav-item active" href="{{ url_for('home_controller.index') }}">Home</a>
+
+            <a class="blog-nav-item" href="{{ url_for('article_controller.index') }}">Article</a>
+            <a class="blog-nav-item" href="{{ url_for('joke_controller.index') }}">Joke</a>
+
+            <a class="blog-nav-item" href="{{ url_for('home_controller.about') }}">About</a>
+            <a class="blog-nav-item" href="{{ url_for('home_controller.contact') }}">Contact</a>
+
+        </nav>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block main %}
+home base main
+{% endblock %}
+
+{% block bottom_script %}
+<script src="{{ url_for('static', filename = 'app/node_modules/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'app/node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+{% endblock %}
+
+{% endblock %}

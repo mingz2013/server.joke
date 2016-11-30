@@ -1,0 +1,28 @@
+{% extends 'admin/user/base.html' %}
+
+{% block title %}admin user update{% endblock %}
+
+{% block main %}
+<div id="user_edit">
+    <input id="user_id" value="{{ user_id }}" hidden/>
+    username: <input id="username"/><br/>
+    password:
+    <button id="change_password_btn">change</button>
+    <br/>
+    <div id="change_password_box">
+        old password: <input type="password" id="old_password"/><br/>
+        new password: <input type="password" id="new_password"/><br/>
+        new password2:<input type="password" id="new_password_2"/><br/>
+        <button id="change_password_btn_2">change</button>
+    </div>
+    email: <input id="email"/><br/>
+    mobile: <input id="mobile"/><br/>
+    sex: <input id="sex"/><br/>
+    permission: <select id="permission">
+    <option value="admin">admin</option>
+    <option value="author">author</option>
+</select><br/>
+    <button id="user_edit_btn">update</button>
+</div>
+
+{% endblock %}

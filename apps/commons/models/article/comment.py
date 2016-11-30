@@ -1,0 +1,22 @@
+# -*- coding:utf-8 -*-
+__author__ = 'zhaojm'
+
+import time
+
+from ..base0 import Base0
+from ...utils.utils import require_value_from_dict
+
+
+class Comment(Base0):
+    """
+    文章类别
+    """
+
+    def __init__(self, title):
+        Base0.__init__(self)
+
+        self.title = title
+        self.status = 0  # 0: 正常, -1: 删除
+        self.create_time = time.time()
+        self.update_time = time.time()
+        pass

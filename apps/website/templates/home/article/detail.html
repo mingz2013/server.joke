@@ -1,0 +1,33 @@
+{% extends 'home/article/base.html' %}
+
+{% block title %}detail{% endblock %}
+
+{% block sub_main %}
+<div id="article_detail">
+    <input id="article_id" value="{{ article._id }}" hidden/>
+    <h1 id="title">{{ article.title }}</h1><br/>
+    <div>
+        author: <span id="author">{{ article.author }}</span><br/>
+        category: <span id="category">{{ article.category }}</span><br/>
+        tags: <span id="tags">
+        {% for tag in tag_list %}
+            <span>{{ tag.title }}</span>
+        {% endfor %}
+        </span><br/>
+        create time: <span id="create_time">{{ article.create_time }}</span><br/>
+        update time: <span id="update_time">{{ article.update_time }}</span><br/>
+    </div>
+    <div>
+        {{ article.content }}
+    </div>
+    <div>
+        <ul>
+            {% for comment in comment_list %}
+            <li>{{ comment.title }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+</div>
+{% endblock %}
