@@ -6,16 +6,18 @@ from bson import ObjectId
 from ..mongo_client_db import mongo_client_db
 from ...utils import model2dict
 
+collection = mongo_client_db.comments
 
-class CommentDB(object):
+
+class CommentCollection(object):
     def __init__(self):
         pass
 
     @staticmethod
     def get_comment_list():
-        comment_list = mongo_client_db.comments.find({}, {"_id": 1, "title": 1})
+        comment_list = collection.find({}, {"_id": 1, "title": 1})
         return comment_list
 
     @staticmethod
     def add_comment(comment):
-        mongo_client_db.comments.insert(model2dict(comment))
+        collection.insert(model2dict(comment))
