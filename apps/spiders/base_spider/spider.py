@@ -5,10 +5,6 @@ import logging
 
 from bs4 import BeautifulSoup
 
-from apps.spiders.common.exception import Error302, Error403, Error404, Error502, Error503, ErrorStatusCode, \
-    HttpClientError, \
-    MoreCheckverifyCodeTimesError, NeedrefreshProxyError, NeedrefreshSearchKeyError
-
 from site_client import SiteClient
 
 from ..common.base_spider import BaseSpider
