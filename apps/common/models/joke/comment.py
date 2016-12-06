@@ -4,19 +4,23 @@ __author__ = 'zhaojm'
 import time
 
 from ..base0 import Base0
-from ...utils.utils import require_value_from_dict
+from ...utils import require_value_from_dict
 
 
 class Comment(Base0):
     """
-    文章类别
+    评论
     """
 
-    def __init__(self, title):
+    def __init__(self, obj):
         Base0.__init__(self)
 
-        self.title = title
+        self.title = require_value_from_dict(obj, 'title')
+        self.content = require_value_from_dict(obj, 'content')
+        self.author = require_value_from_dict(obj, 'author')
+
         self.status = 0  # 0: 正常, -1: 删除
-        self.create_time = time.time()
-        self.update_time = time.time()
+
+        self.date = time.time()
+        self.modified = time.time()
         pass

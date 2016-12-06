@@ -5,7 +5,7 @@ import datetime
 from copy import deepcopy
 
 
-def get_value_from_dict(dict, key, defaut_v):
+def get_value_from_dict(dict, key, defaut_v=None):
     """
     从字典获得查询某个键值，如果不存在，返回默认值
     :param dict:

@@ -4,7 +4,7 @@ __author__ = 'zhaojm'
 import time
 
 from ..base0 import Base0
-from ...utils.utils import require_value_from_dict
+from ...utils import require_value_from_dict
 
 
 class User(Base0):
@@ -22,8 +22,8 @@ class User(Base0):
         self.mobile = require_value_from_dict(obj, 'mobile')
         self.sex = require_value_from_dict(obj, 'sex')
 
-        self.create_time = time.time()
-        self.update_time = time.time()
+        self.date = time.time()
+        self.modified = time.time()
 
         self.permission = require_value_from_dict(obj, 'permission')  # admin, author
 
