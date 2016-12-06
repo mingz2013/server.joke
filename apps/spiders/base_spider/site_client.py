@@ -3,8 +3,10 @@ __author__ = 'zhaojm'
 
 import logging
 import math
-import time
-import urllib2
+
+# import time
+# import urllib2
+
 from bs4 import BeautifulSoup
 
 from ..common.base_site_client import BaseSiteClient

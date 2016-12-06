@@ -8,7 +8,6 @@ if __name__ == "__main__":
     from apps.common.default_encoding import init_encoding
 
     init_encoding()
-
     from apps.spiders.common.init_logging import init_logging
 
     init_logging()
@@ -16,7 +15,6 @@ if __name__ == "__main__":
         from config import Config
 
         c = Config()
-
         from spider import Spider
 
         spider = Spider(c)
