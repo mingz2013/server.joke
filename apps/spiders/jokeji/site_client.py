@@ -14,3 +14,9 @@ class SiteClient(BaseSiteClient):
     def __init__(self, config, proxies={}):
         BaseSiteClient.__init__(config, proxies)
         pass
+
+    def get_search(self, url):
+        return self._verify_get(url)
+
+    def get_detail(self):
+        return self._verify_get(url)

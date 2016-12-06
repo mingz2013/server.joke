@@ -7,7 +7,7 @@ class BaseConfig(object):
         self.download_delay = 1.5
         self.download_timeout = 20.0
 
-        self.host = ""
+        self.host = self._get_host()
 
         self.default_headers = {
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -63,3 +63,7 @@ class BaseConfig(object):
             "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/535.24 (KHTML, like Gecko) Chrome/19.0.1055.1 Safari/535.24"
         ]
         pass
+
+    def _get_host(self):
+        assert False, "need to be overwrite"
+        return ""
