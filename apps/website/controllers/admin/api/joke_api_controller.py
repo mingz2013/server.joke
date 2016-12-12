@@ -3,37 +3,25 @@ __author__ = 'zhaojm'
 
 from flask import Blueprint, jsonify, request
 
-from ....services.api.tag_api_service import TagAPIService
-from apps.common.models.joke.tag import Tag
+from ....services.api.joke_api_service import JokeAPIService
+from apps.common.models.joke.joke import Joke
 
-api = Blueprint('tag_api_controller', __name__, url_prefix='/api/tag')
+api = Blueprint('article_api_controller', __name__, url_prefix='/api/joke')
 
 
 @api.route('/', methods=['GET'])
 def index():
     return 'article index'
 
-
-@api.route('/list', methods=['GET'])
-def list():
-    try:
-        tag_list = TagAPIService.get_tag_list()
-        return jsonify({'retcode': 0, 'errmsg': "", 'result': tag_list})
-    except Exception, e:
-        return jsonify({'retcode': -1, 'errmsg': e.message, 'result': ""})
-
-
-@api.route('/add', methods=['POST'])
-def add():
-    try:
-        tag = Tag(request.form['title'])
-        TagAPIService.add_tag(tag)
-        return jsonify({'retcode': 0, 'errmsg': "", 'result': "success"})
-    except Exception, e:
-        return jsonify({'retcode': -1, 'errmsg': e.message, 'result': ""})
-
+# @api.route('/list', methods=['GET'])
+# def list():
+#     try:
+#         article_list = ArticleAPIService.get_article_list()
+#         return jsonify({'retcode': 0, 'errmsg': "", 'result': article_list})
+#     except Exception, e:
+#         return jsonify({'retcode': -1, 'errmsg': e.message, 'result': ""})
 #
-
+#
 # @api.route('/detail/<article_id>', methods=['GET'])
 # def detail(article_id):
 #     try:
@@ -43,7 +31,19 @@ def add():
 #         return jsonify({'retcode': -1, 'errmsg': e.message, 'result': ""})
 #
 #
-
+# @api.route('/add', methods=['POST'])
+# def add():
+#     # print request.form
+#     print request.json
+#     try:
+#
+#         article = Article(request.json)
+#         article_id = ArticleAPIService.add_article(article)
+#         return jsonify({'retcode': 0, 'errmsg': "", 'result': str(article_id)})
+#     except Exception, e:
+#         return jsonify({'retcode': -1, 'errmsg': e.message, 'result': ""})
+#
+#
 # @api.route('/remove/<article_id>', methods=['DELETE'])
 # def remove(article_id):
 #     try:
@@ -56,7 +56,7 @@ def add():
 # @api.route('/update', methods=['PUT'])
 # def update():
 #     try:
-#         article = request.form['article']
+#         article = Article(request.form)
 #         ArticleAPIService.update_article(article)
 #         return jsonify({'retcode': 0, 'errmsg': "", 'result': "success"})
 #     except Exception, e:

@@ -14,7 +14,6 @@ class JokeCollection(object):
         pass
 
     @staticmethod
-    def get_article_list():
-        article_list = collection.find()
-        return article_list
-
+    def get_joke_list():
+        joke_list = collection.find()
+        return joke_list

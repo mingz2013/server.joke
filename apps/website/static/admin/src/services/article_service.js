@@ -55,29 +55,27 @@ class ArticleService {
 
 
     get_author_list() {
-        user_api.get_user_list().then((data) = > {
+        user_api.get_user_list().then((data) => {
             //通过拿到的数据渲染页面
             console.log(data);
 
-        if (data.retcode == 0) {
-            console.log("get success..");
-            //location.href = "/admin/article/list";
-            var user_list = data.result;
+            if (data.retcode == 0) {
+                console.log("get success..");
+                //location.href = "/admin/article/list";
+                var user_list = data.result;
 
-            var html_str = '';
+                var html_str = '';
 
-            user_list.forEach(({_id, username}, index) = > {
-                html_str += '<option value="' + _id + '">' + username + '</option>'
-        })
-            ;
-            $('#user_id').html(html_str);
+                user_list.forEach(({_id, username}, index) => {
+                    html_str += '<option value="' + _id + '">' + username + '</option>'
+                });
+                $('#user_id').html(html_str);
 
-        } else {
-            console.log("error retcode...");
-            Promise.reject(data.errmsg);
-        }
-    }).
-        catch(function (errmsg) {
+            } else {
+                console.log("error retcode...");
+                Promise.reject(data.errmsg);
+            }
+        }).catch(function (errmsg) {
             //获取数据失败时的处理逻辑
             console.log(errmsg)
         })

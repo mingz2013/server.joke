@@ -8,26 +8,23 @@ class LoginController {
 
     constructor() {
 
-        $('#login_btn').click(() = > {
+        $('#login_btn').click(()=> {
             let username = $('#username').val();
-        let passsword = $('#password').val();
+            let passsword = $('#password').val();
 
-        let user = {
-            "username": username,
-            "password": passsword
-        };
+            let user = {
+                "username": username,
+                "password": passsword
+            };
 
-        login_service.login(user).then((result) = > {
-            location.href = "/admin/";
-    }).
-        catch((errmsg) = > {
-            console.log(errmsg);
-    })
-        ;
+            login_service.login(user).then((result)=> {
+                location.href = "/admin/";
+            }).catch((errmsg)=> {
+                console.log(errmsg);
+            });
 
 
-    })
-        ;
+        });
 
     }
 

@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 __author__ = 'zhaojm'
 
-from apps.common.mongo_db.article.comment_db import CommentDB
+from apps.common.mongo_db.joke.comment_collection import CommentCollection
 
 
 class CommentAPIService(object):
@@ -10,7 +10,7 @@ class CommentAPIService(object):
 
     @staticmethod
     def get_comment_list():
-        comment_list = CommentDB.get_comment_list()
+        comment_list = CommentCollection.get_comment_list()
         i = 0
         comment_list_copy = []
         for comment in comment_list:
@@ -41,7 +41,7 @@ class CommentAPIService(object):
 
     @staticmethod
     def add_comment(comment):
-        CommentDB.add_comment(comment)
+        CommentCollection.add_comment(comment)
         #
         # @staticmethod
         # def update_article(article):

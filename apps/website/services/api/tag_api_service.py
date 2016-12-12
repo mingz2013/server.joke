@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 __author__ = 'zhaojm'
 
-from apps.common.mongo_db.article.tag_db import TagDB
+from apps.common.mongo_db.joke.tag_collection import TagCollection
 
 
 class TagAPIService(object):
@@ -10,7 +10,7 @@ class TagAPIService(object):
 
     @staticmethod
     def get_tag_list():
-        tag_list = TagDB.get_tag_list()
+        tag_list = TagCollection.get_tag_list()
         i = 0
         tag_list_copy = []
         for tag in tag_list:
@@ -42,7 +42,7 @@ class TagAPIService(object):
 
     @staticmethod
     def add_tag(tag):
-        TagDB.add_tag(tag)
+        TagCollection.add_tag(tag)
         #
         # @staticmethod
         # def update_article(article):

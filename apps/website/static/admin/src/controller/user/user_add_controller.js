@@ -9,7 +9,7 @@ import $ from 'jQuery'
 class UserAddController {
     constructor() {
 
-        $('#user_add_btn').click(() = > {
+        $('#user_add_btn').click(() => {
             var user = {
                 "username": $('#username').val(),
                 "password": $('#password').val(),
@@ -19,17 +19,14 @@ class UserAddController {
                 "permission": $('#permission').val()
             };
 
-        user_service.add_user(user).then((user_id) = > {
-            location.href = "/admin/user/detail/" + user_id;
+            user_service.add_user(user).then((user_id) => {
+                location.href = "/admin/user/detail/" + user_id;
 
-    }).
-        catch((errmsg) = > {
-            console.log(errmsg)
-    })
-        ;
+            }).catch((errmsg) => {
+                console.log(errmsg)
+            });
 
-    })
-        ;
+        });
 
 
     }

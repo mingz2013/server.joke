@@ -11,29 +11,26 @@ class ArticleListController {
     constructor() {
 
 
-        article_service.get_article_list().then((article_list) = > {
+        article_service.get_article_list().then((article_list)=> {
             let html_str = '<table><tr><td>index</td><td>title</td><td>author</td></tr>';
 
-        article_list.forEach(({_id, title, author}, index) = > {
+            article_list.forEach(({_id, title, author}, index) => {
 
-            html_str += '<tr>' +
-            '<td>' + index + '</td>' +
-            '<td><a href="/admin/article/detail/' + _id + '">' + title + '</a></td>' +
-            '<td>' + author + '</td>' +
-            '<td><a href="/admin/article/edit/' + _id + '">edit</a></td>' +
-            '<td><a href="javascript:void(0);" onclick="window.controller.remove_article(\'' + _id + '\')">remove</a></td>' +
-            '</tr>';
-    })
-        ;
+                html_str += '<tr>' +
+                    '<td>' + index + '</td>' +
+                    '<td><a href="/admin/article/detail/' + _id + '">' + title + '</a></td>' +
+                    '<td>' + author + '</td>' +
+                    '<td><a href="/admin/article/edit/' + _id + '">edit</a></td>' +
+                    '<td><a href="javascript:void(0);" onclick="window.controller.remove_article(\'' + _id + '\')">remove</a></td>' +
+                    '</tr>';
+            });
 
-        html_str += '</table>';
+            html_str += '</table>';
 
-        $('#article_list').html(html_str);
-    }).
-        catch((errmsg) = > {
+            $('#article_list').html(html_str);
+        }).catch((errmsg)=> {
             console.log(errmsg);
-    })
-        ;
+        });
 
 
         //$('#article_detail_btn').click(() => {
@@ -52,13 +49,11 @@ class ArticleListController {
 
 
     remove_article(article_id) {
-        article_service.remove_article(article_id).then((result) = > {
+        article_service.remove_article(article_id).then((result)=> {
             location.href = "/admin/article/list";
-    }).
-        catch((errmsg) = > {
+        }).catch((errmsg)=> {
             console.log(errmsg);
-    })
-        ;
+        });
     }
 
 

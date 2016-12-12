@@ -4,10 +4,10 @@
 
 import '../css/style.css'
 
-import ArticleAddController from './controller/article/article_add_controller'
-import ArticleDetailController from './controller/article/article_detail_controller'
-import ArticleEditController from './controller/article/article_edit_controller'
-import ArticleListController from './controller/article/article_list_controller'
+import JokeAddController from './controller/joke/joke_add_controller'
+import JokeDetailController from './controller/joke/joke_detail_controller'
+import JokeEditController from './controller/joke/joke_edit_controller'
+import JokeListController from './controller/joke/joke_list_controller'
 
 import UserAddController from './controller/user/user_add_controller'
 import UserDetailController from './controller/user/user_detail_controller'
@@ -26,52 +26,40 @@ import $ from 'jQuery'
 //window.article_service = article_service;
 //window.category_service = category_service;
 
-$(document).ready(() = > {
+$(document).ready(() => {
 
-    $('#user_list'
-).
-show(() = > {
-    window.controller = new UserListController();
-})
-;
-$('#user_detail').show(() = > {
-    window.controller = new UserDetailController();
-})
-;
-$('#user_edit').show(() = > {
-    window.controller = new UserEditController();
-})
-;
-$('#user_add').show(() = > {
-    window.controller = new UserAddController();
-})
-;
+    $('#user_list').show(()=> {
+        window.controller = new UserListController();
+    });
+    $('#user_detail').show(()=> {
+        window.controller = new UserDetailController();
+    });
+    $('#user_edit').show(()=> {
+        window.controller = new UserEditController();
+    });
+    $('#user_add').show(()=> {
+        window.controller = new UserAddController();
+    });
 
-$('#article_add').show(() = > {
-    window.controller = new ArticleAddController();
-})
-;
-$('#article_detail').show(() = > {
-    window.controller = new ArticleDetailController();
-})
-;
-$('#article_edit').show(() = > {
-    window.controller = new ArticleEditController();
-})
-;
-$('#article_list').show(() = > {
-    window.controller = new ArticleListController();
-})
-;
+    $('#article_add').show(()=> {
+        window.controller = new ArticleAddController();
+    });
+    $('#article_detail').show(()=> {
+        window.controller = new ArticleDetailController();
+    });
+    $('#article_edit').show(()=> {
+        window.controller = new ArticleEditController();
+    });
+    $('#article_list').show(()=> {
+        window.controller = new ArticleListController();
+    });
 
-$('#login_box').show(() = > {
-    window.controller = new LoginController();
-})
-;
+    $('#login_box').show(()=> {
+        window.controller = new LoginController();
+    });
 
 
-})
-;
+});
 
 
 

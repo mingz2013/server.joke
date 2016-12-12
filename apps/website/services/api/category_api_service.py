@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 __author__ = 'zhaojm'
 
-from apps.common.mongo_db.article.category_db import CategoryDB
+from apps.common.mongo_db.joke.category_collection import CategoryCollection
 
 
 class CategoryAPIService(object):
@@ -10,7 +10,7 @@ class CategoryAPIService(object):
 
     @staticmethod
     def get_category_list():
-        category_list = CategoryDB.get_category_list()
+        category_list = CategoryCollection.get_category_list()
         i = 0
         category_list_copy = []
         for category in category_list:
@@ -41,7 +41,7 @@ class CategoryAPIService(object):
 
     @staticmethod
     def add_category(category):
-        CategoryDB.add_category(category)
+        CategoryCollection.add_category(category)
         #
         # @staticmethod
         # def update_article(article):
