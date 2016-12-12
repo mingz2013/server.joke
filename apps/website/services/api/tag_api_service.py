@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 __author__ = 'zhaojm'
 
-from commons.mongo_db.article.tag_db import TagDB
+from apps.common.mongo_db.article.tag_db import TagDB
 
 
 class TagAPIService(object):

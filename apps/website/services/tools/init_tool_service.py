@@ -3,8 +3,8 @@ __author__ = 'zhaojm'
 
 import logging
 
-from commons.models.user.user import User
-from commons.mongo_db.user.user_db import UserDB
+from apps.common.models.user.user import User
+from apps.common.mongo_db.user.user_db import UserDB
 
 
 class InitToolService(object):

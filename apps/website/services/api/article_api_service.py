@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
 __author__ = 'zhaojm'
 
-from commons.mongo_db.article.article_db import ArticleDB
-from commons.mongo_db.user.user_db import UserDB
+from apps.common.mongo_db.article.article_db import ArticleDB
+from apps.common.mongo_db.user.user_db import UserDB
 
 
 class ArticleAPIService(object):
