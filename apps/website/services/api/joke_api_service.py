@@ -2,7 +2,7 @@
 __author__ = 'zhaojm'
 
 from apps.common.mongo_db.joke import joke_collection
-from apps.common.mongo_db.user.user_db import UserDB
+from apps.common.mongo_db.user.user_collection import UserCollection
 
 
 class JokeAPIService(object):

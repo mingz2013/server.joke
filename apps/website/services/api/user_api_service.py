@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
 __author__ = 'zhaojm'
 
-from apps.common.mongo_db.user.user_db import UserDB
-from apps.common.utils.utils import model2dict
+from apps.common.mongo_db.user.user_collection import UserCollection
+from apps.common.utils import model2dict
 
 
 class UserAPIService(object):
@@ -11,7 +11,7 @@ class UserAPIService(object):
 
     @staticmethod
     def login(user):
-        UserDB.check_login(user)
+        UserCollection.check_login(user)
         pass
 
     @staticmethod
@@ -28,7 +28,7 @@ class UserAPIService(object):
 
     @staticmethod
     def get_user_detail(user_id):
-        user = UserDB.get_user_by_id(user_id)
+        user = UserCollection.get_user_by_id(user_id)
         user_copy = {}
         user_copy.update({
             "_id": str(user.get('_id')),
@@ -43,12 +43,12 @@ class UserAPIService(object):
 
     @staticmethod
     def remove_user(user_id):
-        UserDB.remove_user_by_id(user_id)
+        UserCollection.remove_user_by_id(user_id)
 
     @staticmethod
     def add_user(user):
-        return UserDB.add_user(user)
+        return UserCollection.add_user(user)
 
     @staticmethod
     def update_user(user_id, user):
-        UserDB.update_user(user_id, user)
+        UserCollection.update_user(user_id, user)
