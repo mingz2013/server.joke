@@ -11,7 +11,7 @@ class BaseSpider(object):
         pass
 
     def run(self):
-        pass
+        raise NotImplementedError()
 
     def _create_site_client(self):
         return BaseSiteClient(self._config)

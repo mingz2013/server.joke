@@ -65,5 +65,4 @@ class BaseConfig(object):
         pass
 
     def _get_host(self):
-        assert False, "need to be overwrite"
-        return ""
+        raise NotImplementedError()
